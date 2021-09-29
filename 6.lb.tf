@@ -1,9 +1,9 @@
-resource "azurerm_lb" "david-lb" {
-  name = "davidlb"
-  location = azurerm_resource_group.david-rg.location
-  resource_group_name = azurerm_resource_group.david-rg.name
+resource "azurerm_lb" "user25-lb" {
+  name = "user25lb"
+  location = azurerm_resource_group.user25-rg.location
+  resource_group_name = azurerm_resource_group.user25-rg.name
   frontend_ip_configuration {
-  name = "davidPublicIPAddress"
-  public_ip_address_id = azurerm_public_ip.david-publicip.id
+  name = "user25PublicIPAddress"
+  public_ip_address_id = azurerm_public_ip.user25-publicip.id
  }
 }
