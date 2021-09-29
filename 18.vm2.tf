@@ -22,8 +22,8 @@ resource "azurerm_virtual_machine" "web2" {
 
  os_profile {
         computer_name  = "user25web2"
-        admin_username = "azureuser"
-        admin_password = "Pass****"
+        admin_username = "azureuser"    ## 아래 34번 라인의 계정이름과 동일해야 함
+        admin_password = "Qweasdzxc123!"     ## 12자리이상, 특수문자, 숫자, 대문자 조합으로 생성 필요
 	custom_data= file("web.sh")
     }
 
