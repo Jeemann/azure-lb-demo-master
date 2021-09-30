@@ -1,5 +1,5 @@
 resource "azurerm_virtual_machine" "web1" {
-    name                  = "user25"
+    name                  = "user25web1"
     location              = azurerm_resource_group.user25-rg.location
     resource_group_name   = azurerm_resource_group.user25-rg.name
     availability_set_id   = azurerm_availability_set.avset.id
