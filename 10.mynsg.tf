@@ -11,9 +11,21 @@ resource "azurerm_network_security_group" "mynsg" {
         protocol                   = "Tcp"
         source_port_range          = "*"
         destination_port_range     = "22"
-        source_address_prefix      = "*"   ## Admin 서버 IP 주소 혹은 접속하는 서버(or PC) IP주소
+        source_address_prefix      = "58.140.19.66"   ## Admin 서버 IP 주소 혹은 접속하는 서버(or PC) IP주소
         destination_address_prefix = "*"
     }
+    security_rule {
+        name                       = "SSH-jenkins"
+        priority                   = 1002
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        source_port_range          = "*"
+        destination_port_range     = "22"
+        source_address_prefix      = "*"   ## jenkins IP 등록
+        destination_address_prefix = "*"
+    }
+    
  security_rule {
         name                       = "HTTP"
         priority                   = 2001
